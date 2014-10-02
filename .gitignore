@@ -1,0 +1,92 @@
+
+html/
+repoexclude/
+.cache/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+
+# =========================
+# Operating System Files
+# =========================
+
+# OSX
+# =========================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must ends with two \r.
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+#
+# List of files that should be excluded from the public repository.
+#
+
+#this is for preparing the example data
+prepare*.m
+
+#Standard exclude files for matlab:
+*.asv
+*.m~
+*.mex*
+slprj/
+
+
+
+#standard gitignore rules. .. Some not relevant for this particular project but excluded anyway:
+#compiled
+*.com
+*.pyc
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+#compressed files
+*.zip
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+
+#logs & dbs
+*.log
+*.sql
+*.sqllite
+
+#OS generated files
+.DS_Store
+.DS_Store?
+*._
+.Spotlight-V100
+*.Trashes
+ehthumbs.db
+Thumbs.db
