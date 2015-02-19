@@ -4,7 +4,6 @@ function h = phaseplot(x,y,phase,sz,varargin)
 % [h,yy,zz] = PhasePlot(x,y,phase,sz[,ArrowParameters])
 %
 %
-% Requires the Arrow function by Erik A. Johnson.
 %
 % Note: Arrows will get skewed if you resize the axis.
 %
@@ -14,7 +13,7 @@ function h = phaseplot(x,y,phase,sz,varargin)
 % -------------------------------------------------------------------------
 %The MIT License (MIT)
 %
-%Copyright (c) 2014 Aslak Grinsted
+%Copyright (c) 2014-2015 Aslak Grinsted
 %
 %Permission is hereby granted, free of charge, to any person obtaining a copy
 %of this software and associated documentation files (the "Software"), to deal
@@ -59,11 +58,18 @@ phase=phase(idx);
 if (length(sz)>1), sz=sz(idx); end;
 
 
-ar=get(gca,'plotboxaspectratio')./get(gca,'dataaspectratio');
-dxlim=abs(diff(get(gca,'xlim')));
+dataar=get(gca,'DataAspectRatio');
+units=get(gca,'units');
+set(gca,'units','centimeters');
+wh=get(gca,'position'); wh=wh(3:4);
+set(gca,'units',units);
+ar=wh./dataar(1:2);
+
+
 ar(2)=ar(1)/ar(2);
 ar(1)=1;
 
+dxlim=abs(diff(get(gca,'xlim')));
 dx=ar(1).*sz*dxlim*.5;
 dy=ar(2).*sz*dxlim*.5;
 

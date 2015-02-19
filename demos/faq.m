@@ -1,7 +1,7 @@
 %% FAQ
 % Frequently Asked Questions for the Wavelet Coherence Matlab Toolbox
 %
-% http://www.pol.ac.uk/home/research/waveletcoherence/
+% http://www.glaciology.net/wavelet-coherence
 
 
 %% How do I know whether AR1 noise is an appropriate null hypothesis to test against?
