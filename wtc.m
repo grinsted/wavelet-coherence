@@ -208,5 +208,5 @@ if Args.MakeFigure
 
 end
 
-varargout={Rsq,period,scale,coi,wtcsig};
+varargout={Rsq,period,scale,coi,wtcsig,t};
 varargout=varargout(1:nargout);
