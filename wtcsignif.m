@@ -112,9 +112,9 @@ end
 nbins=1000;
 wlc=zeros(length(scale),nbins);
 
-wbh = waitbar(0,['Running Monte Carlo (significance)... (H=' checkhash ')'],'Name','Monte Carlo (WTC)');
+
+timedwaitbar(0,['Running Monte Carlo (significance)... (H=' checkhash ')'])
 for ii=1:mccount
-    waitbar(ii/mccount,wbh);
     d1=rednoise(n,ar1(1),1);
     d2=rednoise(n,ar1(2),1);
     [W1,period,scale,coi] = wavelet(d1,dt,pad,dj,s0,j1,mother);
@@ -131,8 +131,9 @@ for ii=1:mccount
             wlc(s,cd(jj))=wlc(s,cd(jj))+1;
         end
     end
+    timedwaitbar(ii/mccount)
 end
-close(wbh);
+
 
 for s=1:maxscale
     rsqy=((1:nbins)-.5)/nbins;
