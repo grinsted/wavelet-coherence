@@ -59,11 +59,11 @@ else
     if ~ishandle(hprogress) %if progress windows is closed
         error('Timedwaitbar:ProgressWindowClosed','-------------- Execution interrupted! --------------')
     end
-    hprogress.Position=[0 0 x .25];
-    hprogress.String=sprintf('%.0f%%',x*100);
+    set(hprogress,'Position',[0 0 x .25]);
+    set(hprogress,'String',sprintf('%.0f%%',x*100));
 end
 if nargin>1
-    htxt.String=txt;
+    set(htxt,'String',txt);
 end
 
 
