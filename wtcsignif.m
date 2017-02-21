@@ -42,8 +42,9 @@ function wtcsig=wtcsignif(mccount,ar1,dt,n,pad,dj,s0,j1,mother,cutoff)
 
 
 
-cachedir=fileparts(mfilename('fullpath'));
-cachedir=fullfile(cachedir,'.cache');
+%cachedir=fileparts(mfilename('fullpath'));
+%cachedir=fullfile(cachedir,'.cache');
+cachedir=tempdir;
 
 
 %we don't need to do the monte carlo if we have a cached
