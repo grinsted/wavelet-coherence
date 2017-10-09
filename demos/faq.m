@@ -6,7 +6,7 @@
 
 %% How do I know whether AR1 noise is an appropriate null hypothesis to test against?
 % It is usually an appropriate null hypothesis if the theoretical AR1
-% spectrum is �a good model� for the power decay in the observed spectrum.
+% spectrum is  degreesa good model degrees for the power decay in the observed spectrum.
 % I recommend to simply visually compare the two power spectra:
 
 X=rednoise(200,.8);
@@ -64,12 +64,12 @@ wtc(X2,Y2,'ar1',[0 0]) %Test the red series against white noise.
 %% What does a peak in XWT tell?
 % You have to be very careful interpreting XWT peaks. If you take the WTC
 % of a signal with pure white noise then the XWT will look very similar to
-% the WT of the signal. The same problem exists in �normal' power spectral
+% the WT of the signal. The same problem exists in 'normal' power spectral
 % analysis. If you calculate the cross Power spectral density of a periodic
 % signal with a white noise signal then you will get a peak. It does not
 % mean that the series have any kind of connection just because there is a
 % peak. I recommend examining the WTC and the phase arrows. If there is a
-% connection then you would expect the phenomena to be phase-locked � i.e.
+% connection then you would expect the phenomena to be phase-locked  degrees i.e.
 % that the phase-arrows point only in one direction for a given wavelength.
 % So, if they vary between in-phase and anti-phase then it is a clue that
 % they probably not are linked.
@@ -81,7 +81,7 @@ wtc(X2,Y2,'ar1',[0 0]) %Test the red series against white noise.
 % interpreted is best illustrated by example:
 
 figure('color',[1 1 1])
-t=(1:200)';
+t=(1:200)'; 
 X=sin(t);
 Y=sin(t-1); %X leads Y.
 xwt([t X],[t Y]); % phase arrows points south east
@@ -90,18 +90,18 @@ xwt([t X],[t Y]); % phase arrows points south east
 % Phase arrows pointing
 % *	right: in-phase
 % * left: anti-phase
-% * down: X leading Y by 90�
-% * up: Y leading X by 90�
+% * down: X leading Y by 90 degrees
+% * up: Y leading X by 90 degrees
 
 %%
 % Note: interpreting the phase as a lead(/lag) should always be done with
-% care. A lead of 90� can also be interpreted as a lag of 270� or a lag of
-% 90� relative to the anti-phase (opposite sign).
+% care. A lead of 90 degrees can also be interpreted as a lag of 270 degrees or a lag of
+% 90 degrees relative to the anti-phase (opposite sign).
 
 
 %% How do I convert a phase-angle to a time lag?
 % This can not always be done and when it can, it should be done with care.
-% A 90� lead might as well be a 90� lag to the anti-phase. There is
+% A 90 degrees lead might as well be a 90 degrees lag to the anti-phase. There is
 % therefore a non-uniqueness problem when doing the conversion. A phase
 % angle can also only be converted to a time lag for a specific wavelength.
 % This equation works best for determining the time lag when the series are
@@ -195,7 +195,7 @@ set(findobj(gca,'type','patch'),'alphadatamap','none','facealpha',1)
 
 
 
-%% Copyright notice
+%%
 %   Copyright (C) 2002-2004, Aslak Grinsted
 %
 %   This software may be used, copied, or redistributed as long as it is not
