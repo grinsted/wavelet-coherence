@@ -4,6 +4,7 @@
 %
 function publishexamples
 
+close all
 
 font='Rockwell';
 set(0,'defaultUicontrolFontName',font);
@@ -27,16 +28,12 @@ s = RandStream('mt19937ar','Seed',0);
 RandStream.setGlobalStream(s);
 addpath ..
 
+d=dir('..\faq\*.m')
 
-% publishfile('..\ex_linefit','html')
-% publishfile('..\ex_rosenbrockbanana','html')
-% publishfile('..\ex_behappy','html')
-% publishfile('..\ex_breakfit','html')
-
-% publishfile('..\ex_linefit','markdown')
-% publishfile('..\ex_rosenbrockbanana','markdown')
-% publishfile('..\ex_behappy','markdown')
-publishfile('..\demos\faq','markdown')
+for ii=1:length(d)
+    publishfile(['..\faq\' strrep(d(ii).name,'.m','')],'markdown')
+end
+%     publishfile('..\demos\isAR1ok','markdown')
 
 
 
@@ -46,7 +43,7 @@ function publishfile(fname,outputformat)
 options=[];
 options.format= 'html'; % 'html' | 'doc' | 'pdf' | 'ppt' | 'xml' | 'latex'
 %options.stylesheet= 'C:\Users\Aslak\Documents\MATLAB\gwmcmc\repoexclude\robotoslab.xsl'; % '' | an XSL filename (ignored when format = 'doc', 'pdf', or 'ppt')
-options.outputDir= '..\docs';
+options.outputDir= '..\docs\_faq';
 options.imageFormat= 'png'; % '' (default based on format)  'bmp' | 'eps' | 'epsc' | 'jpeg' | 'meta' | 'png' | 'ps' | 'psc' | 'tiff'
 options.figureSnapMethod= 'print';  % 'entireGUIWindow'| 'print' | 'getframe' | 'entireFigureWindow'
 options.useNewFigure= true; % true | false
@@ -74,10 +71,26 @@ try
     publish(name,options);
     if markdown
         target=fullfile(options.outputDir,name);
-        movefile([target '.tex'],[target '.md']);
+        newfilename=[target '.md'];
+        movefile([target '.tex'],newfilename);
+        try
+            movefile(fullfile(options.outputDir,'*.png'),fullfile(options.outputDir, '..\images'),'f');
+        catch
+        end
+        fid  = fopen(newfilename,'r');
+        f=fread(fid,'*char')';
+        fclose(fid);
+        f = regexprep(f,'\(([\w\d_-]+\.png)\)','(images/$1)')
+        fid  = fopen(newfilename,'w');
+        fprintf(fid,'%s',f);
+        fclose(fid);
+    
     end
 catch ME
     cd(oldpath)
     rethrow(ME)
 end
 cd(oldpath)
+
+
+

@@ -1,10 +1,9 @@
+
 ---
-layout: post
-title: FAQ for the Wavelet Coherence Matlab Toolbox
+layout: posts      
+title: FAQ
 ---
-
-
-
+Frequently Asked Questions for the Wavelet Coherence Matlab Toolbox
 
 http://www.glaciology.net/wavelet-coherence
 
@@ -24,7 +23,8 @@ semilogy(freq,P/sum(P),freq,Ptheoretical/sum(Ptheoretical),'r');
 legend('observed',sprintf('Theoretical AR1=%.2f',aa),'location','best')
 ```
 
-![IMAGE](faq_01.png)
+![IMAGE](images/faq_01.png)
+
 
 
 When is the probability distribution of the data important?
@@ -58,21 +58,20 @@ wtc(X2,Y2,'ar1',[0 0]) %Test the red series against white noise.
 
 ```
 orig_arcoefs =
-    -0.086153     0.046629
+      0.16339     0.031214
 smoothed_arcoefs =
-      0.80074      0.80934
+      0.88724       0.8059
 
 ```
     
-![IMAGE](faq_02.png)
-The three figures are very similar.
+![IMAGE](images/faq_02.png)
 
 
 
 What does a peak in XWT tell?
 ----------------------------------------------------------
 
-You have to be very careful interpreting XWT peaks. If you take the WTC of a signal with pure white noise then the XWT will look very similar to the WT of the signal. The same problem exists in  degreesnormal' power spectral analysis. If you calculate the cross Power spectral density of a periodic signal with a white noise signal then you will get a peak. It does not mean that the series have any kind of connection just because there is a peak. I recommend examining the WTC and the phase arrows. If there is a connection then you would expect the phenomena to be phase-locked  degrees i.e. that the phase-arrows point only in one direction for a given wavelength. So, if they vary between in-phase and anti-phase then it is a clue that they probably not are linked.
+You have to be very careful interpreting XWT peaks. If you take the WTC of a signal with pure white noise then the XWT will look very similar to the WT of the signal. The same problem exists in 'normal' power spectral analysis. If you calculate the cross Power spectral density of a periodic signal with a white noise signal then you will get a peak. It does not mean that the series have any kind of connection just because there is a peak. I recommend examining the WTC and the phase arrows. If there is a connection then you would expect the phenomena to be phase-locked  degrees i.e. that the phase-arrows point only in one direction for a given wavelength. So, if they vary between in-phase and anti-phase then it is a clue that they probably not are linked.
 
 
 
@@ -89,7 +88,7 @@ Y=sin(t-1); %X leads Y.
 xwt([t X],[t Y]); % phase arrows points south east
 ```
 
-![IMAGE](faq_03.png)
+![IMAGE](images/faq_03.png)
 
 Phase arrows pointing \*	right: in-phase \* left: anti-phase \* down: X leading Y by 90 degrees \* up: Y leading X by 90 degrees
 
@@ -113,7 +112,6 @@ timelag =
       0.61111
 
 ```
-
     A visual inspection of the time series at the wavelength in question should make it clear if the time lag is right. I also recommend calculating the time lag with other methods for support.
 
 
@@ -137,11 +135,11 @@ ChosenPeriod=period(rowix)
 ChosenPeriod =
        11.032
 meantheta =
-     -0.38594
+     -0.39344
 anglestrength =
-      0.99957
+      0.99953
 sigma =
-     0.029202
+      0.03059
 
 ```
     If you want to restrict the mean to be calculated over significant regions outside the COI then you can do like this:
@@ -155,11 +153,11 @@ angles=angle(Wxy(rowix,issig(rowix,:)&~incoi(rowix,:)));
 
 ```
 meantheta =
-      -0.3848
+     -0.39035
 anglestrength =
-      0.99957
+      0.99958
 sigma =
-     0.029462
+     0.029062
 
 ```
     
@@ -200,7 +198,8 @@ Y=sin(t*2*pi/11+.4)+randn(size(t))*.1;
 wtc([t X],[t Y],'mcc',0); %MCC:MonteCarloCount
 ```
 
-![IMAGE](faq_04.png)
+![IMAGE](images/faq_04.png)
+
 Note that the significance contour can not be trusted with out running the Monte Carlo test.
 
 
@@ -221,7 +220,8 @@ set(gca,'ytick',log2(1./freq),'yticklabel',freq/1e6)
 ylabel('Frequency (MHz)')
 ```
 
-![IMAGE](faq_05.png)
+![IMAGE](images/faq_05.png)
+
 
 
 Why is something missing from my figures on screen or when I try to save them?
@@ -236,7 +236,12 @@ set(gcf,'renderer','opengl');
 set(findobj(gca,'type','patch'),'alphadatamap','none','facealpha',1)
 ```
 
-![IMAGE](faq_06.png)
+![IMAGE](images/faq_06.png)
+
 **Further reading on how to resolve this issue:** http://www.mathworks.com/access/helpdesk/help/techdoc/index.html?/access/helpdesk/help/techdoc/ref/opengl.html http://www.mathworks.com/support/solutions/data/28724.shtml http://www.mathworks.com/access/helpdesk/help/techdoc/ref/figure_props.html
 
-
+```matlabCopyright (C) 2002-2004, Aslak Grinsted```
+```matlabThis software may be used, copied, or redistributed as long as it is not
+sold and this copyright notice is reproduced on each copy made.  This
+routine is provided as is without any express or implied warranties
+whatsoever.```

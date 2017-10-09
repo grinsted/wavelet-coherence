@@ -20,16 +20,14 @@ Modified to provide github-markdown by Aslak Grinsted
   <xsl:output method="text" indent="no"/>
 
 <xsl:template match="mscript">
-
-    <!-- Determine if the there should be an introduction section. -->
-    <xsl:variable name="hasIntro" select="count(cell[@style = 'overview'])"/>
-    <xsl:if test = "$hasIntro">
+<!-- Determine if the there should be an introduction section. -->
+<xsl:variable name="hasIntro" select="count(cell[@style = 'overview'])"/>
+<xsl:if test = "$hasIntro">
 ---
 layout: posts      
 title: <xsl:apply-templates select="cell[1]/steptitle"/>
 ---
 <xsl:apply-templates select="cell[1]/text"/>
-
 </xsl:if>
 
     <xsl:variable name="body-cells" select="cell[not(@style = 'overview')]"/>
@@ -181,6 +179,7 @@ Contents
 
 <xsl:template match="img">
 ![IMAGE](<xsl:value-of select="@src"/>)
+
 </xsl:template>
 
 <!-- Colors for syntax-highlighted input code -->
