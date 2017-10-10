@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: Demo of the cross wavelet and wavelet coherence toolbox
 categories: demo
 ---
