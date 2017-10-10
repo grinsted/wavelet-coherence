@@ -1,11 +1,15 @@
-
-
-Why is something missing from my figures on screen or when I try to save them?
-==========================================================
-
-This is usually caused by an incompatibility bug between Matlab and your graphics driver? There is unfortunately not any single method to resolve this issue, since it depends on your system. However, the problems can in some cases be resolved by changing the renderer property on the figure. In some cases it is caused by the shaded rendering of the COI. Here are some options you may try:
+---
+layout: posts
+title: Why is something missing from my figures on screen or when I try to save them?
+---
+      This is usually caused by an incompatibility bug between Matlab and your graphics driver? There is unfortunately not any single method to resolve this issue, since it depends on your system. However, the problems can in some cases be resolved by changing the renderer property on the figure. In some cases it is caused by the shaded rendering of the COI. Here are some options you may try:
 
 ```matlab
+t=(1:100)';
+X=[t,cos(t.*(1+sin(t/2)*2))];
+Y=[t,cos(t.*(.7+sin(t/4)*7))];
+xwt(X,Y)
+
 set(gcf,'renderer','painters');
 set(gcf,'renderer','zbuffer');
 set(gcf,'renderer','opengl');

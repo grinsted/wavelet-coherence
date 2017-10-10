@@ -1,9 +1,8 @@
-
-
-How do I determine if a point is inside the COI or not?
-==========================================================
-
-Here is an example that does just that:
+---
+layout: posts
+title: How do I determine if a point is inside the COI or not?
+---
+      Here is an example that does just that:
 
 ```matlab
 t=(0:1:500)';

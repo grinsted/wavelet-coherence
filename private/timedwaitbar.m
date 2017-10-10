@@ -57,6 +57,7 @@ if isempty(hwait)
     t=now; %Don't time window creation.
 else
     if ~ishandle(hprogress) %if progress windows is closed
+        hwait=[];
         error('Timedwaitbar:ProgressWindowClosed','-------------- Execution interrupted! --------------')
     end
     set(hprogress,'Position',[0 0 x .25]);

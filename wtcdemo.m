@@ -14,13 +14,14 @@ close all
 % First we load the two time series into the matrices d1 and d2.
 
 seriesname={'AO' 'BMI'};
-d1=load('demos\jao.txt');
-d2=load('demos\jbaltic.txt');
+d1=load('faq\jao.txt');
+d2=load('faq\jbaltic.txt');
 
 %% Change the pdf.
 % The time series of Baltic Sea ice extent is highly bi-modal and we
 % therefore transform the timeseries into a series of percentiles. The
 % transformed series probably reacts 'more linearly' to climate.
+
 
 d2(:,2)=boxpdf(d2(:,2));
 

@@ -1,9 +1,8 @@
-
-
-How do I avoid the slow Monte Carlo significance test in wtc?
-==========================================================
-
-You can do that by simply specifying the MonteCarloCount to be zero. Example:
+---
+layout: posts
+title: How do I avoid the slow Monte Carlo significance test in wtc?
+---
+      You can do that by simply specifying the MonteCarloCount to be zero. Example:
 
 ```matlab
 figure('color',[1 1 1])

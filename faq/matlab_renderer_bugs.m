@@ -6,6 +6,11 @@
 % In some cases it is caused by the shaded rendering of the COI. Here are
 % some options you may try:
 
+t=(1:100)';
+X=[t,cos(t.*(1+sin(t/2)*2))];
+Y=[t,cos(t.*(.7+sin(t/4)*7))];
+xwt(X,Y)
+
 set(gcf,'renderer','painters');
 set(gcf,'renderer','zbuffer');
 set(gcf,'renderer','opengl');

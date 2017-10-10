@@ -6,6 +6,8 @@ function publishexamples
 
 close all
 
+thispath=fileparts(mfilename('fullpath'));
+
 font='Rockwell';
 set(0,'defaultUicontrolFontName',font);
 set(0,'defaultUitableFontName',font);
@@ -28,22 +30,26 @@ s = RandStream('mt19937ar','Seed',0);
 RandStream.setGlobalStream(s);
 addpath ..
 
-d=dir('..\faq\*.m')
+publishfile('..\wtcdemo','markdown',[thispath '\_posts'])
+
+d=dir(fullfile(thispath,'..\faq\*.m'))
 
 for ii=1:length(d)
-    publishfile(['..\faq\' strrep(d(ii).name,'.m','')],'markdown')
+    publishfile(fullfile('..\faq\',strrep(d(ii).name,'.m','')),'markdown',[thispath '\_faq'])
 end
-%     publishfile('..\demos\isAR1ok','markdown')
 
 
 
 
-function publishfile(fname,outputformat)
+function publishfile(fname,outputformat,targetfolder)
+disp(fname); drawnow
+
+thispath=fileparts(mfilename('fullpath'));
 
 options=[];
 options.format= 'html'; % 'html' | 'doc' | 'pdf' | 'ppt' | 'xml' | 'latex'
 %options.stylesheet= 'C:\Users\Aslak\Documents\MATLAB\gwmcmc\repoexclude\robotoslab.xsl'; % '' | an XSL filename (ignored when format = 'doc', 'pdf', or 'ppt')
-options.outputDir= '..\docs\_faq';
+options.outputDir= targetfolder;
 options.imageFormat= 'png'; % '' (default based on format)  'bmp' | 'eps' | 'epsc' | 'jpeg' | 'meta' | 'png' | 'ps' | 'psc' | 'tiff'
 options.figureSnapMethod= 'print';  % 'entireGUIWindow'| 'print' | 'getframe' | 'entireFigureWindow'
 options.useNewFigure= true; % true | false
@@ -59,8 +65,7 @@ switch outputformat
 end
 
 if markdown
-    privatepath=fileparts(mfilename('fullpath'));
-    options.stylesheet= fullfile(privatepath,'mxdom2md.xsl');
+    options.stylesheet= fullfile(thispath,'mxdom2md.xsl');
     options.format= 'latex';
 end
 
@@ -80,11 +85,10 @@ try
         fid  = fopen(newfilename,'r');
         f=fread(fid,'*char')';
         fclose(fid);
-        f = regexprep(f,'\(([\w\d_-]+\.png)\)','(images/$1)')
+        f = regexprep(f,'\(([\w\d_-]+\.png)\)','(images/$1)');
         fid  = fopen(newfilename,'w');
         fprintf(fid,'%s',f);
         fclose(fid);
-    
     end
 catch ME
     cd(oldpath)

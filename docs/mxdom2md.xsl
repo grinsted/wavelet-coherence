@@ -24,23 +24,22 @@ Modified to provide github-markdown by Aslak Grinsted
 <xsl:variable name="hasIntro" select="count(cell[@style = 'overview'])"/>
 <xsl:if test = "$hasIntro">
 ---
-layout: posts      
+layout: posts
 title: <xsl:apply-templates select="cell[1]/steptitle"/>
 ---
 <xsl:apply-templates select="cell[1]/text"/>
 </xsl:if>
-
     <xsl:variable name="body-cells" select="cell[not(@style = 'overview')]"/>
-
-    <!-- Include contents if there are titles for any subsections.
-    <xsl:if test="count(cell/steptitle[not(@style = 'document')])">
-      <xsl:call-template name="contents">
-        <xsl:with-param name="body-cells" select="$body-cells"/>
-      </xsl:call-template>
-    </xsl:if> -->
-
     <!-- Loop over each cell -->
     <xsl:for-each select="$body-cells">
+      <xsl:choose>
+<xsl:when test="position() = 1">---
+layout: posts
+title: <xsl:apply-templates select="steptitle[@style = 'document']"/>
+---
+      </xsl:when>
+      <xsl:otherwise>
+
         <!-- Title of cell -->
         <xsl:if test="steptitle">
           <xsl:variable name="headinglevel">
@@ -56,13 +55,13 @@ title: <xsl:apply-templates select="cell[1]/steptitle"/>
             </xsl:choose>
           </xsl:variable>
 
-<xsl:text>
-
-</xsl:text>
 <xsl:apply-templates select="steptitle"/>
 <xsl:value-of select="$headinglevel"/>
 
 </xsl:if>
+</xsl:otherwise>
+</xsl:choose>
+
 
 <!-- Contents of each cell -->
 <xsl:apply-templates select="text"/>

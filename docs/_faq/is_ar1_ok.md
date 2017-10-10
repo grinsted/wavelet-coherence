@@ -1,9 +1,8 @@
-
-
-How do I know whether AR1 noise is an appropriate null hypothesis to test against?
-==========================================================
-
-It is usually an appropriate null hypothesis if the theoretical AR1 spectrum is  degreesa good model degrees for the power decay in the observed spectrum. I recommend to simply visually compare the two power spectra:
+---
+layout: posts
+title: How do I know whether AR1 noise is an appropriate null hypothesis to test against?
+---
+      It is usually an appropriate null hypothesis if the theoretical AR1 spectrum is  degreesa good model degrees for the power decay in the observed spectrum. I recommend to simply visually compare the two power spectra:
 
 ```matlab
 X=rednoise(200,.8);
