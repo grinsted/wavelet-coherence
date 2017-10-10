@@ -3,6 +3,7 @@ layout: default
 title: How do I calculate the average phase angle?
 categories: faq
 ---
+
       You can use anglemean.m provided with the package. Here is a small example that calculates the mean angle at the period closest to 11:
 
 ```matlab

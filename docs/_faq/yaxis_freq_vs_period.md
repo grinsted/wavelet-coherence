@@ -3,6 +3,7 @@ layout: default
 title: How do I change the Y-axis to frequency instead of period?
 categories: faq
 ---
+
       Here is a short example that does just that. The sampling frequency is 100 MHz, and the signal is 5Mhz.
 
 ```matlab

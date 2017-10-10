@@ -3,6 +3,7 @@ layout: default
 title: How do I avoid the slow Monte Carlo significance test in wtc?
 categories: faq
 ---
+
       You can do that by simply specifying the MonteCarloCount to be zero. Example:
 
 ```matlab

@@ -28,6 +28,7 @@ layout: default
 title: <xsl:apply-templates select="cell[1]/steptitle"/>
 categories: ##category##
 ---
+
 <xsl:apply-templates select="cell[1]/text"/>
 </xsl:if>
     <xsl:variable name="body-cells" select="cell[not(@style = 'overview')]"/>
@@ -39,6 +40,7 @@ layout: default
 title: <xsl:apply-templates select="steptitle[@style = 'document']"/>
 categories: ##category##
 ---
+
       </xsl:when>
       <xsl:otherwise>
 
@@ -149,7 +151,7 @@ Contents
 </xsl:template>
 
 <xsl:template match="latex">
-    <xsl:value-of select="@text" disable-output-escaping="yes"/>
+<xsl:value-of select="@text" disable-output-escaping="yes"/>
 </xsl:template>
 <xsl:template match="html"/>
 

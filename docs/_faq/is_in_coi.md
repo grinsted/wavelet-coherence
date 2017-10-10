@@ -3,6 +3,7 @@ layout: default
 title: How do I determine if a point is inside the COI or not?
 categories: faq
 ---
+
       Here is an example that does just that:
 
 ```matlab

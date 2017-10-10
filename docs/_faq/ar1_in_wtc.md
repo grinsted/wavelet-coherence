@@ -3,6 +3,7 @@ layout: default
 title: How important is the AR1 coefficient for WTC significance levels?
 categories: faq
 ---
+
       The definition of Wavelet coherence (WTC) effectively normalizes by the local power in time frequency space. Therefore WTC is very insensitive to the noise colour used in the null-hypothesis (see Grinsted et al. 2004). It can easily be demonstrated by example:
 
 ```matlab
