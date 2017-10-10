@@ -3,7 +3,14 @@ layout: default
 ---
 
   <h2>Cross wavelet and wavelet coherence toolbox</h2>
-{{ site.collections | jsonify }}
-  {% for category in site.categories %}
-  {{ category_name }}<br/>
-  {% endfor %}
+
+
+
+<h2>FAQ:</h2>
+<ul>
+{% for post in site.collections.faq %}
+<li><a href="{{ post.url | absolute_url }}">
+  {{ post.title }}
+</a></li>
+{% endfor %}
+</ul>
