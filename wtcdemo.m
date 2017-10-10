@@ -1,4 +1,4 @@
-%% Example
+%% Demo of the cross wavelet and wavelet coherence toolbox 
 % This example illustrates how simple it is to do
 % continuous wavelet transform (CWT), Cross wavelet transform (XWT)
 % and Wavelet Coherence (WTC) plots of your own data.
@@ -7,8 +7,7 @@
 % Arctic Oscillation index (AO) and
 % the maximum sea ice extent in the Baltic (BMI).
 %
-% http://www.glaciology.net/wavelet-coherence
-close all
+
 
 %% Load the data
 % First we load the two time series into the matrices d1 and d2.
@@ -61,12 +60,3 @@ title(['WTC: ' seriesname{1} '-' seriesname{2} ] )
 
 
 
-
-
-%% Copyright notice
-%   Copyright (C) 2002-2004, Aslak Grinsted
-%
-%   This software may be used, copied, or redistributed as long as it is not
-%   sold and this copyright notice is reproduced on each copy made.  This
-%   routine is provided as is without any express or implied warranties
-%   whatsoever.

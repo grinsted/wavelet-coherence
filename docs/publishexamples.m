@@ -43,6 +43,7 @@ end
 
 function publishfile(fname,outputformat,targetfolder)
 disp(fname); drawnow
+close all
 
 thispath=fileparts(mfilename('fullpath'));
 

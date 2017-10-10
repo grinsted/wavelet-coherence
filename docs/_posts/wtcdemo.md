@@ -1,20 +1,17 @@
+
+---
+layout: posts
+title: Demo of the cross wavelet and wavelet coherence toolbox
+---
+This example illustrates how simple it is to do continuous wavelet transform (CWT), Cross wavelet transform (XWT) and Wavelet Coherence (WTC) plots of your own data.
+
+The time series we will be analyzing are the winter Arctic Oscillation index (AO) and the maximum sea ice extent in the Baltic (BMI).
+
 ---
 layout: posts
 title: 
 ---
-      This example illustrates how simple it is to do continuous wavelet transform (CWT), Cross wavelet transform (XWT) and Wavelet Coherence (WTC) plots of your own data.
-
-The time series we will be analyzing are the winter Arctic Oscillation index (AO) and the maximum sea ice extent in the Baltic (BMI).
-
-http://www.glaciology.net/wavelet-coherence
-
-```matlab
-close all
-```
-Load the data
-----------------------------------------------------------
-
-First we load the two time series into the matrices d1 and d2.
+      First we load the two time series into the matrices d1 and d2.
 
 ```matlab
 seriesname={'AO' 'BMI'};
@@ -75,11 +72,3 @@ title(['WTC: ' seriesname{1} '-' seriesname{2} ] )
 
 ![IMAGE](images/wtcdemo_03.png)
 
-Copyright notice
-----------------------------------------------------------
-
-```matlabCopyright (C) 2002-2004, Aslak Grinsted```
-```matlabThis software may be used, copied, or redistributed as long as it is not
-sold and this copyright notice is reproduced on each copy made.  This
-routine is provided as is without any express or implied warranties
-whatsoever.```
