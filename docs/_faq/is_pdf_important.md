@@ -1,4 +1,5 @@
 ---
+layout: default
 title: When is the probability distribution of the data important?
 categories: faq
 ---

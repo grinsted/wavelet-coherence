@@ -1,4 +1,5 @@
 ---
+layout: default
 title: How do I avoid the slow Monte Carlo significance test in wtc?
 categories: faq
 ---

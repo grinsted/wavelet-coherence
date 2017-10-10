@@ -1,4 +1,5 @@
 ---
+layout: default
 title: How do I calculate the average phase angle?
 categories: faq
 ---
