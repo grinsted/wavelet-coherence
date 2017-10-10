@@ -8,9 +8,24 @@ layout: default
 
 <h2>FAQ:</h2>
 <ul>
-{% for post in site.collections.faq %}
+{% for post in site.faq %}
 <li><a href="{{ post.url | absolute_url }}">
   {{ post.title }}
 </a></li>
 {% endfor %}
 </ul>
+ 
+
+{% for collection in site.collections %}
+
+  {% assign name = collection.label %}
+  
+    <h1>{{ name }}</h1>
+
+    {% for post in site.[name] %}
+    <ul>
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    </ul>
+    {% endfor %}
+
+{% endfor %}
