@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: How do I avoid the slow Monte Carlo significance test in wtc?
-category: faq
+categories: faq
 ---
       You can do that by simply specifying the MonteCarloCount to be zero. Example:
 
