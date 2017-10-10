@@ -27,7 +27,6 @@ wt(randn(100,1))
 In this way you can add to the path on a project basis. You can also add it permanently to your path if that is more convenient. You can use matlabs `pathtool` for that. 
 
 
-
 Contribute
 ----------
 It would be awesome if you would contribute to the project. Some ways you could help:
