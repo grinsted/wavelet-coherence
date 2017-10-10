@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: How do I change the Y-axis to frequency instead of period?
 categories: faq
 ---

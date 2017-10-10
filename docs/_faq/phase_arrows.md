@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: How should the phase arrows be interpreted?
 categories: faq
 ---
