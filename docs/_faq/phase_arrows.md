@@ -1,5 +1,4 @@
 ---
-layout: posts
 title: How should the phase arrows be interpreted?
 categories: faq
 ---

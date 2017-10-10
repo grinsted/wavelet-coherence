@@ -1,6 +1,5 @@
 
 ---
-layout: posts
 title: Demo of the cross wavelet and wavelet coherence toolbox
 categories: demo
 ---
@@ -9,7 +8,6 @@ This example illustrates how simple it is to do continuous wavelet transform (CW
 The time series we will be analyzing are the winter Arctic Oscillation index (AO) and the maximum sea ice extent in the Baltic (BMI).
 
 ---
-layout: posts
 title: 
 categories: demo
 ---

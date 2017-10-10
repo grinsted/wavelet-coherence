@@ -1,5 +1,4 @@
 ---
-layout: posts
 title: How do I determine if a point is inside the COI or not?
 categories: faq
 ---

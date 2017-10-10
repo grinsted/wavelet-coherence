@@ -24,7 +24,6 @@ Modified to provide github-markdown by Aslak Grinsted
 <xsl:variable name="hasIntro" select="count(cell[@style = 'overview'])"/>
 <xsl:if test = "$hasIntro">
 ---
-layout: posts
 title: <xsl:apply-templates select="cell[1]/steptitle"/>
 categories: ##category##
 ---
@@ -35,7 +34,6 @@ categories: ##category##
     <xsl:for-each select="$body-cells">
       <xsl:choose>
 <xsl:when test="position() = 1">---
-layout: posts
 title: <xsl:apply-templates select="steptitle[@style = 'document']"/>
 categories: ##category##
 ---
