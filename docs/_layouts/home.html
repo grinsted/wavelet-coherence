@@ -6,10 +6,8 @@ layout: default
 
   <h1 class="page-heading">{{ page.title }}</h1>
 
-  {{ content }}
 
   <h3 class="page-heading">Demos</h3>
-  
   <ul class="post-list">
     {% for post in site.demo %}
       <li>
@@ -18,5 +16,13 @@ layout: default
     {% endfor %}
   </ul>
 
+  <h3 class="page-heading">Frequently Asked Questions</h3>
+  <ul class="post-list">
+    {% for post in site.faq %}
+      <li>
+          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      </li>
+    {% endfor %}
+  </ul>
 
 </div>
