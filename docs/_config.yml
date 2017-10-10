@@ -6,4 +6,5 @@ baseurl: /wavelet-coherence
 url: http://grinsted.github.io
 twitter_username: agrinsted
 github_username: grinsted
+permalink: /:categories/:title/
 theme: jekyll-theme-dinky
