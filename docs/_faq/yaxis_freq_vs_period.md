@@ -4,7 +4,7 @@ title: How do I change the Y-axis to frequency instead of period?
 categories: faq
 ---
 
-      Here is a short example that does just that. The sampling frequency is 100 MHz, and the signal is 5Mhz.
+Here is a short example that does just that. The sampling frequency is 100 MHz, and the signal is 5Mhz.
 
 ```matlab
 figure('color',[1 1 1])
@@ -16,6 +16,7 @@ freq=[128 64 32 16 8 4 2 1]*1e6;
 set(gca,'ytick',log2(1./freq),'yticklabel',freq/1e6)
 ylabel('Frequency (MHz)')
 ```
+
 
 ![IMAGE](images/yaxis_freq_vs_period_01.png)
 

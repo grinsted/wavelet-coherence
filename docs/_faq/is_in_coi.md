@@ -4,7 +4,7 @@ title: How do I determine if a point is inside the COI or not?
 categories: faq
 ---
 
-      Here is an example that does just that:
+Here is an example that does just that:
 
 ```matlab
 t=(0:1:500)';
@@ -15,6 +15,7 @@ p=[100 64; 100 10; 50 64]; %are these points in the COI?
 ispointincoi=interp2(t,period,incoi,p(:,1),p(:,2),'nearest')
 ```
 
+
 ```
 ispointincoi =
      0
@@ -22,4 +23,4 @@ ispointincoi =
      1
 
 ```
-    
+

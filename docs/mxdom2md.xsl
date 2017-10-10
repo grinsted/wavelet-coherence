@@ -31,23 +31,23 @@ categories: ##category##
 
 <xsl:apply-templates select="cell[1]/text"/>
 </xsl:if>
-    <xsl:variable name="body-cells" select="cell[not(@style = 'overview')]"/>
-    <!-- Loop over each cell -->
-    <xsl:for-each select="$body-cells">
-      <xsl:choose>
+<xsl:variable name="body-cells" select="cell[not(@style = 'overview')]"/>
+<!-- Loop over each cell -->
+<xsl:for-each select="$body-cells">
+<xsl:choose>
 <xsl:when test="position() = 1">---
 layout: page
 title: <xsl:apply-templates select="steptitle[@style = 'document']"/>
 categories: ##category##
 ---
 
-      </xsl:when>
-      <xsl:otherwise>
+</xsl:when>
+<xsl:otherwise>
 
-        <!-- Title of cell -->
-        <xsl:if test="steptitle">
-          <xsl:variable name="headinglevel">
-            <xsl:choose>
+<!-- Title of cell -->
+<xsl:if test="steptitle">
+<xsl:variable name="headinglevel">
+<xsl:choose>
 <xsl:when test="steptitle[@style = 'document']">
 ==========================================================
 
@@ -56,8 +56,8 @@ categories: ##category##
 ----------------------------------------------------------
 
 </xsl:otherwise>
-            </xsl:choose>
-          </xsl:variable>
+</xsl:choose>
+</xsl:variable>
 
 <xsl:apply-templates select="steptitle"/>
 <xsl:value-of select="$headinglevel"/>
@@ -89,7 +89,7 @@ categories: ##category##
 
 
 <xsl:template name="contents">
-  <xsl:param name="body-cells"/>
+<xsl:param name="body-cells"/>
 Contents
 -------------------------<xsl:for-each select="$body-cells"><xsl:if test="./steptitle">
 <xsl:apply-templates select="steptitle">
@@ -123,27 +123,28 @@ Contents
 </xsl:text></xsl:template>
 
 <xsl:template match="pre">
-  <xsl:choose>
-    <xsl:when test="@class='error'">
+<xsl:choose>
+<xsl:when test="@class='error'">
 ```<xsl:value-of select="."/>```
-    </xsl:when>
-    <xsl:otherwise>
+</xsl:when>
+<xsl:otherwise>
 ```matlab
 <xsl:value-of select="."/>
 ```
-    </xsl:otherwise>
-  </xsl:choose>
+</xsl:otherwise>
+</xsl:choose>
 </xsl:template>
+
 <xsl:template match="b">**<xsl:apply-templates/>**</xsl:template>
 <xsl:template match="tt">`<xsl:apply-templates/>`</xsl:template>
 <xsl:template match="i">*<xsl:apply-templates/>*</xsl:template>
 <xsl:template match="a"><xsl:value-of select="."/></xsl:template>
 
 <xsl:template match="text()">
-  <!-- Escape special characters in text -->
-  <xsl:call-template name="replace">
-    <xsl:with-param name="string" select="."/>
-  </xsl:call-template>
+<!-- Escape special characters in text -->
+<xsl:call-template name="replace">
+<xsl:with-param name="string" select="."/>
+</xsl:call-template>
 </xsl:template>
 
 <xsl:template match="equation">
@@ -157,24 +158,25 @@ Contents
 
 
 <!-- Code input and output -->
-
 <xsl:template match="mcode">```matlab
 <xsl:value-of select="."/>
 ```
+
 </xsl:template>
 
 
 <xsl:template match="mcodeoutput">
-  <xsl:choose>
-    <xsl:when test="substring(.,0,8)='&lt;latex&gt;'">
-      <xsl:value-of select="substring(.,8,string-length(.)-16)" disable-output-escaping="yes"/>
-    </xsl:when>
-    <xsl:otherwise>
+<xsl:choose>
+<xsl:when test="substring(.,0,8)='&lt;latex&gt;'">
+<xsl:value-of select="substring(.,8,string-length(.)-16)" disable-output-escaping="yes"/>
+</xsl:when>
+<xsl:otherwise>
 ```
 <xsl:value-of select="."/>
 ```
-    </xsl:otherwise>
-  </xsl:choose>
+
+</xsl:otherwise>
+</xsl:choose>
 </xsl:template>
 
 
@@ -190,19 +192,19 @@ Contents
 <xsl:template match="mwsh:code">```matlab<xsl:apply-templates/>```
 </xsl:template>
 <xsl:template match="mwsh:keywords">
-  <span class="keyword"><xsl:value-of select="."/></span>
+<span class="keyword"><xsl:value-of select="."/></span>
 </xsl:template>
 <xsl:template match="mwsh:strings">
-  <span class="string"><xsl:value-of select="."/></span>
+<span class="string"><xsl:value-of select="."/></span>
 </xsl:template>
 <xsl:template match="mwsh:comments">
-  <span class="comment"><xsl:value-of select="."/></span>
+<span class="comment"><xsl:value-of select="."/></span>
 </xsl:template>
 <xsl:template match="mwsh:unterminated_strings">
-  <span class="untermstring"><xsl:value-of select="."/></span>
+<span class="untermstring"><xsl:value-of select="."/></span>
 </xsl:template>
 <xsl:template match="mwsh:system_commands">
-  <span class="syscmd"><xsl:value-of select="."/></span>
+<span class="syscmd"><xsl:value-of select="."/></span>
 </xsl:template>
 
 

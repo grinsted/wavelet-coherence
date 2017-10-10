@@ -15,13 +15,14 @@ title:
 categories: demo
 ---
 
-      First we load the two time series into the matrices d1 and d2.
+First we load the two time series into the matrices d1 and d2.
 
 ```matlab
 seriesname={'AO' 'BMI'};
 d1=load('faq\jao.txt');
 d2=load('faq\jbaltic.txt');
 ```
+
 Change the pdf.
 ----------------------------------------------------------
 
@@ -30,6 +31,7 @@ The time series of Baltic Sea ice extent is highly bi-modal and we therefore tra
 ```matlab
 d2(:,2)=boxpdf(d2(:,2));
 ```
+
 Continuous wavelet transform (CWT)
 ----------------------------------------------------------
 
@@ -48,6 +50,7 @@ title(seriesname{2})
 set(gca,'xlim',tlim)
 ```
 
+
 ![IMAGE](images/wtcdemo_01.png)
 
 Cross wavelet transform (XWT)
@@ -61,6 +64,7 @@ xwt(d1,d2)
 title(['XWT: ' seriesname{1} '-' seriesname{2} ] )
 ```
 
+
 ![IMAGE](images/wtcdemo_02.png)
 
 Wavelet coherence (WTC)
@@ -73,6 +77,7 @@ figure('color',[1 1 1])
 wtc(d1,d2)
 title(['WTC: ' seriesname{1} '-' seriesname{2} ] )
 ```
+
 
 ![IMAGE](images/wtcdemo_03.png)
 
