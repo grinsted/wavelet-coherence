@@ -35,7 +35,7 @@ publishfile('..\wtcdemo','markdown',[thispath '\_posts'],'demo')
 d=dir(fullfile(thispath,'..\faq\*.m'))
 
 for ii=1:length(d)
-    publishfile(fullfile('..\faq\',strrep(d(ii).name,'.m','')),'markdown',[thispath '\_posts'],'faq')
+    publishfile(fullfile('..\faq\',strrep(d(ii).name,'.m','')),'markdown',[thispath '\_faq'],'faq')
 end
 
 
