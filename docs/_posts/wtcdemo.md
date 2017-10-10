@@ -1,4 +1,3 @@
-
 ---
 layout: page
 title: Demo of the cross wavelet and wavelet coherence toolbox
@@ -8,12 +7,6 @@ categories: demo
 This example illustrates how simple it is to do continuous wavelet transform (CWT), Cross wavelet transform (XWT) and Wavelet Coherence (WTC) plots of your own data.
 
 The time series we will be analyzing are the winter Arctic Oscillation index (AO) and the maximum sea ice extent in the Baltic (BMI).
-
----
-layout: page
-title: 
-categories: demo
----
 
 First we load the two time series into the matrices d1 and d2.
 
