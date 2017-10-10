@@ -30,8 +30,8 @@ s = RandStream('mt19937ar','Seed',0);
 RandStream.setGlobalStream(s);
 addpath ..
 
-publishfile('..\wtcdemo','markdown',[thispath '\_posts'],'demo')
-
+publishfile('..\wtcdemo','markdown',[thispath '\_demo'],'demo')
+return
 d=dir(fullfile(thispath,'..\faq\*.m'))
 
 for ii=1:length(d)

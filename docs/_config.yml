@@ -12,6 +12,6 @@ collections:
   faq:
     output: true
     permalink: /:collection/:name
-  posts:
+  demo:
     output: true
-    permalink: /:collection/:name    
+    permalink: /:collection/:name
