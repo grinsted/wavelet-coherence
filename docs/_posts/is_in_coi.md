@@ -1,6 +1,7 @@
 ---
 layout: posts
 title: How do I determine if a point is inside the COI or not?
+category: faq
 ---
       Here is an example that does just that:
 

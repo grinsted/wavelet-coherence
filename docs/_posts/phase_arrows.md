@@ -1,6 +1,7 @@
 ---
 layout: posts
 title: How should the phase arrows be interpreted?
+category: faq
 ---
       The phase arrows show the relative phasing of two time series in question. This can also be interpreted as a lead\#lag. How it should be interpreted is best illustrated by example:
 

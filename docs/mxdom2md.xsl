@@ -26,6 +26,7 @@ Modified to provide github-markdown by Aslak Grinsted
 ---
 layout: posts
 title: <xsl:apply-templates select="cell[1]/steptitle"/>
+category: ##category##
 ---
 <xsl:apply-templates select="cell[1]/text"/>
 </xsl:if>
@@ -36,6 +37,7 @@ title: <xsl:apply-templates select="cell[1]/steptitle"/>
 <xsl:when test="position() = 1">---
 layout: posts
 title: <xsl:apply-templates select="steptitle[@style = 'document']"/>
+category: ##category##
 ---
       </xsl:when>
       <xsl:otherwise>

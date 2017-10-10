@@ -30,18 +30,18 @@ s = RandStream('mt19937ar','Seed',0);
 RandStream.setGlobalStream(s);
 addpath ..
 
-publishfile('..\wtcdemo','markdown',[thispath '\_posts'])
+publishfile('..\wtcdemo','markdown',[thispath '\_posts'],'demo')
 
 d=dir(fullfile(thispath,'..\faq\*.m'))
 
 for ii=1:length(d)
-    publishfile(fullfile('..\faq\',strrep(d(ii).name,'.m','')),'markdown',[thispath '\_faq'])
+    publishfile(fullfile('..\faq\',strrep(d(ii).name,'.m','')),'markdown',[thispath '\_posts'],'faq')
 end
 
 
 
 
-function publishfile(fname,outputformat,targetfolder)
+function publishfile(fname,outputformat,targetfolder,category)
 disp(fname); drawnow
 close all
 
@@ -87,6 +87,7 @@ try
         f=fread(fid,'*char')';
         fclose(fid);
         f = regexprep(f,'\(([\w\d_-]+\.png)\)','(images/$1)');
+        f = strrep(f,'##category##',category);
         fid  = fopen(newfilename,'w');
         fprintf(fid,'%s',f);
         fclose(fid);
