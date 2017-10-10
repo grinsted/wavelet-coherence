@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: Why is something missing from my figures on screen or when I try to save them?
 categories: faq
 ---

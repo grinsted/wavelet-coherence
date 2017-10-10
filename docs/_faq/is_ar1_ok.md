@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: How do I know whether AR1 noise is an appropriate null hypothesis to test against?
 categories: faq
 ---

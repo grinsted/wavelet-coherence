@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: How do I convert a phase-angle to a time lag?
 categories: faq
 ---

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: How important is the AR1 coefficient for WTC significance levels?
 categories: faq
 ---

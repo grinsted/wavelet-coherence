@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: How do I determine if a point is inside the COI or not?
 categories: faq
 ---

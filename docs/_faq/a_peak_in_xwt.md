@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: What does a peak in XWT mean?
 categories: faq
 ---
